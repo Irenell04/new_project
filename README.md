@@ -1,25 +1,26 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/material.dart';
+# Flutter Food Delivery Application Design
 
-class RestaurantList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('restaurants').snapshots(),
-      builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        if (!snapshot.hasData) return CircularProgressIndicator();
-        return ListView.builder(
-          itemCount: snapshot.data!.docs.length,
-          itemBuilder: (context, index) {
-            var restaurant = snapshot.data!.docs[index];
-            return ListTile(
-              title: Text(restaurant['name']),
-              subtitle: Text(restaurant['cuisine']),
-              leading: Image.network(restaurant['imageUrl']),
-            );
-          },
-        );
-      },
-    );
-  }
-}
+## This application is not completed yet. Currently, I am working on it. 
+A small attempt to make an Food delivery app user interface in Flutter for Android and iOS.
+
+## 🤓 Author(s)
+**Miss Nicole** 
+
+## Food Ordering & Delivery App UI in Flutter
+<img src="screens/full_ui.png"  />
+
+## ScreenShots
+### Home Page
+<img src="screens/home_screen.jpg" height="500em" />
+
+### Food Details Screen & Add To Cart Screen
+<img src="screens/detail_screen.jpg" height="500em" /> &nbsp;&nbsp;&nbsp;&nbsp; <img src="screens/add_to_cart_screen.jpg" height="500em" />
+
+### Login & Registration Screen
+<img src="screens/login_screen.jpg" height="500em" />&nbsp;&nbsp;&nbsp;&nbsp; <img src="screens/signin_scren.jpg" height="500em" />
+
+## ✨ Requirements
+* Any Operating System (ie. MacOS X, Linux, Windows)
+* Any IDE with Flutter SDK installed (ie.  Android Studio, VSCode, IntelliJ, etc)
+* A little knowledge of Dart and Flutter
+* A brain to think 🤓🤓
